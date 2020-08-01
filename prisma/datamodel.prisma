@@ -1,4 +1,13 @@
 type User {
-  id: ID! @id
-  name: String!
+    id: ID! @id @unique
+    name: String!
+    email: String! @unique
+    posts: [Post!]!
+}
+
+type Post {
+    id: ID! @id @unique
+    title: String!
+    body: String!
+    author: User!
 }
